@@ -278,7 +278,7 @@ def main():
 
     sample_path = os.path.join(outpath, "samples")
     os.makedirs(sample_path, exist_ok=True)
-    base_count = len(os.listdir(sample_path))
+    base_count = 0
     grid_count = len(os.listdir(outpath)) - 1
 
     start_code = None
@@ -323,7 +323,8 @@ def main():
                                 x_sample = 255. * rearrange(x_sample.cpu().numpy(), 'c h w -> h w c')
                                 img = Image.fromarray(x_sample.astype(np.uint8))
                                 img = put_watermark(img, wm_encoder)
-                                img.save(os.path.join(sample_path, f"{base_count:05}.png"))
+                                base_count_str = str(base_count)
+                                img.save(os.path.join(sample_path, f"{opt.output_name+base_count_str}.png"))
                                 base_count += 1
 
                         if not opt.skip_grid:
@@ -339,7 +340,7 @@ def main():
                     grid = 255. * rearrange(grid, 'c h w -> h w c').cpu().numpy()
                     img = Image.fromarray(grid.astype(np.uint8))
                     img = put_watermark(img, wm_encoder)
-                    img.save(os.path.join(outpath, f'grid-{grid_count:04}.png'))
+                    img.save(os.path.join(outpath, f'grid-{opt.output_name,grid_count:04}.png'))
                     grid_count += 1
 
                 toc = time.time()
