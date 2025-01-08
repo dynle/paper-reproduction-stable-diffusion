@@ -232,7 +232,7 @@ def main():
         choices=["full", "autocast"],
         default="autocast"
     )
-    parset.add_argument(
+    parser.add_argument(
         "--output_name",
 	type=str,
 	help="specify output name"
