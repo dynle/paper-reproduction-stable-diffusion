@@ -37,6 +37,8 @@ pip install transformers==4.19.2 diffusers invisible-watermark
 pip install -e .
 ``` 
 
+❗Download stable-diffusion-v-1-4 from [here](https://huggingface.co/CompVis/stable-diffusion-v-1-4-original)
+
 
 ## Stable Diffusion v1
 
