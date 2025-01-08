@@ -4,7 +4,7 @@ import os
 
 prompt_stealer_results = pd.read_csv("../paper-reproduction-prompt-stealing-attack/output/PS_results/prompt_stealer_results.csv")
 # Start from the 1817th row where the previous run left off
-filtered_results = prompt_stealer_results.iloc[1817:]
+filtered_results = prompt_stealer_results.iloc[3531:]
 
 # Set the environment variable to use GPU 1
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"

@@ -232,6 +232,11 @@ def main():
         choices=["full", "autocast"],
         default="autocast"
     )
+    parset.add_argument(
+        "--output_name",
+	type=str,
+	help="specify output name"
+    )
     opt = parser.parse_args()
 
     if opt.laion400m:
